@@ -14,6 +14,10 @@ const write = async () => {
   process.stdin.on("end", () => {
     stream.end();
   });
+
+  stream.on("error", (err) => {
+    console.log(err);
+  });
 };
 
 await write();
