@@ -16,11 +16,11 @@ const compress = async () => {
   const streamDestination = createWriteStream(destinationPath);
 
   pipeline(streamSource, gzip, streamDestination, (err) => {
-  if (err) {
-    console.error('An error occurred:', err);
-    process.exitCode = 1;
-  }
-});
+    if (err) {
+      console.error("An error occurred:", err);
+      process.exitCode = 1;
+    }
+  });
 };
 
 await compress();
