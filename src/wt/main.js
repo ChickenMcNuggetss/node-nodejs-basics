@@ -18,10 +18,12 @@ const performCalculations = async () => {
 
         worker.on("message", (result) => {
           resolve({ status: "resolved", data: result });
+          worker.terminate();
         });
 
         worker.on("error", (err) => {
           resolve({ status: "error", data: null });
+          worker.terminate();
         });
 
         worker.postMessage(10 + i);
