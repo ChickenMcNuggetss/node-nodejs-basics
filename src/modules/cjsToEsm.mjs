@@ -1,6 +1,7 @@
 import path from "node:path";
 import { release, version } from "node:os";
 import { createServer as createServerHttp } from "node:http";
+import { fileURLToPath } from "node:url";
 
 const c = await import("./files/c.cjs");
 
